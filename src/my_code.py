@@ -4,6 +4,6 @@
 #  
 #
 #######################################
-def double_it(x):
-  x=x*2
-  return x
+def main(x):
+    x = x * 2
+    return x
