@@ -1,0 +1,19 @@
+{
+  "files.exclude": {
+    "**/*.pyc": {
+      "when": "$(basename).py"
+    },
+    "**/__pycache__": true
+  },
+  "editor.autoSave": "on",
+  "python.testing.pytestEnabled": true,
+  "python.testing.nosetestsEnabled": false,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestPath": "/workspace/.pip-modules/bin/pytest",
+  "python.testing.pytestArgs": [
+    "."
+  ],
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintPath": "/home/gitpod/.pyenv/shims/pylint",
+  "python.linting.enabled": true
+}

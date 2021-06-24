@@ -1,0 +1,38 @@
+name: Build and Test
+
+on:
+  push:
+    paths: 
+      - 'src/my_code.py'
+
+jobs:
+      
+  test_and_comment:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test student program
+      run: python3 -m pytest tests/my_test.py >> .github/ISSUE_TEMPLATE/test-failure.md
+    - name: Failure message
+      if: failure()
+      uses: machine-learning-apps/pr-comment@1.0.0
+      env: 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        path: .github/ISSUE_TEMPLATE/test-failure.md    
+    - name: Lint student program
+      run: flake8 src/my_code.py
+    - name: Success message
+      uses: machine-learning-apps/pr-comment@1.0.0
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      with:
+        path: .github/ISSUE_TEMPLATE/test-success.md
+

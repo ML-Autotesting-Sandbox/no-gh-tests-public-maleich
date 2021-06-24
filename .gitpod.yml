@@ -1,0 +1,5 @@
+tasks:
+  - init: |
+      pip3 install pytest
+      clear
+#    command: echo 'start script'

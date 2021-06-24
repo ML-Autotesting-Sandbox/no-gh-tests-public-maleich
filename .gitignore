@@ -1,0 +1,4 @@
+# ignore all files except solution file and test file
+/*
+!/src
+!/tests
