@@ -1,4 +1,4 @@
-import src.mycode
+import src.my_code
 
 
 def test_inc():
