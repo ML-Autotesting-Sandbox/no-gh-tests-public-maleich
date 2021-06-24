@@ -3,7 +3,7 @@ name: Build and Test
 on:
   push:
     paths: 
-      - 'src/my_code.py'
+      - 'src/mycode.py'
 
 jobs:
       
@@ -28,7 +28,7 @@ jobs:
       with:
         path: .github/ISSUE_TEMPLATE/test-failure.md    
     - name: Lint student program
-      run: flake8 src/my_code.py
+      run: flake8 src/mycode.py
     - name: Success message
       uses: machine-learning-apps/pr-comment@1.0.0
       env:
