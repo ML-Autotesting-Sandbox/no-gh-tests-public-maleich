@@ -4,7 +4,7 @@
 #  
 #
 #######################################
-def double_it(x):
+def main(x):
   x=x*2
   return x
 
